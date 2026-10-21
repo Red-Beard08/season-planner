@@ -1,0 +1,9 @@
+{
+  "id": "season-planner",
+  "name": "Season Planner",
+  "version": "1.0.0",
+  "minAppVersion": "1.5.0",
+  "description": "Plan seasons, life rhythms, and conceptual load across people and time.",
+  "author": "Red-Beard",
+  "isDesktopOnly": false
+}

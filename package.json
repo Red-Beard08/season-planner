@@ -1,0 +1,23 @@
+{
+  "name": "season-planner",
+  "version": "1.0.0",
+  "description": "Markdown-first conceptual life planning and load visualization for Obsidian.",
+  "main": "main.js",
+  "scripts": {
+    "build": "node esbuild.config.mjs production",
+    "typecheck": "tsc --noEmit",
+    "test": "npm run typecheck && npm run build && node tests/test-utils.mjs",
+    "validate": "node scripts/validate-portability.mjs"
+  },
+  "keywords": ["obsidian", "planning", "seasons", "load"],
+  "author": "Red-Beard",
+  "license": "MIT",
+  "engines": { "node": ">=18" },
+  "devDependencies": {
+    "@types/node": "^22.10.0",
+    "builtin-modules": "^4.0.0",
+    "esbuild": "^0.25.0",
+    "obsidian": "latest",
+    "typescript": "^5.7.0"
+  }
+}

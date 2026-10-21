@@ -1,0 +1,10 @@
+import esbuild from "esbuild";
+import builtins from "builtin-modules";
+const production = process.argv[2] === "production";
+const context = await esbuild.context({
+  banner: { js: "/* Season Planner: Markdown-first conceptual life planning for Obsidian. */" },
+  entryPoints: ["src/main.ts"], bundle: true,
+  external: ["obsidian", "electron", "@codemirror/*", "@lezer/*", ...builtins],
+  format: "cjs", target: "es2018", logLevel: "info", sourcemap: production ? false : "inline", outfile: "main.js"
+});
+if (production) { await context.rebuild(); await context.dispose(); } else await context.watch();
